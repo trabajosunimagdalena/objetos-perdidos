@@ -31,6 +31,7 @@ function enviarCorreo(asunto, datos) {
   });
 }
 
+/*
 function enviarReporte(evento) {
   evento.preventDefault();
   var form = document.getElementById('formularioRegistro');
@@ -47,7 +48,7 @@ function enviarReporte(evento) {
     .catch(function () { alert('Reporte guardado (no se pudo enviar el correo)'); })
     .finally(function () { cerrarModal(); });
 }
-
+*/
 function reclamar(nombre) {
   var datos = {
     Tipo: 'Solicitud de reclamo',
