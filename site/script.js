@@ -1,5 +1,5 @@
 var CORREO_DESTINO = 'jrcervantesp@unimagdalena.edu.co';
-var ENDPOINT = 'https://formsubmit.co/ajax/' + CORREO_DESTINO;
+var ENDPOINT = 'https://formsubmit.co/' + CORREO_DESTINO;
 
 function abrirModal(tipo) {
   var titulo = document.getElementById('tituloModal');
