@@ -105,9 +105,11 @@
   <div class="modal">
     <button class="cerrar-modal" onclick="cerrarModal()">×</button>
     <h2 id="tituloModal">Reportar objeto</h2>
-    <form id="formularioRegistro" onsubmit="enviarReporte(event)">
+    
+    <form id="formularioRegistro" action="https://formsubmit.co/jrcervantesp@unimagdalena.edu.co" method="POST">
+      
       <label for="categoria">Categoría</label>
-      <select id="categoria" required>
+      <select id="categoria" name="Categoría" required>
         <option value="">Selecciona una opción</option>
         <option>Mochilas y bolsos</option>
         <option>Electrónica</option>
@@ -118,10 +120,10 @@
       </select>
 
       <label for="lugar">Lugar</label>
-      <input type="text" id="lugar" placeholder="Ej. Biblioteca, Bloque Mar Caribe" required>
+      <input type="text" id="lugar" name="Lugar" placeholder="Ej. Biblioteca, Bloque Mar Caribe" required>
 
       <label for="descripcion">Descripción</label>
-      <textarea id="descripcion" rows="4" placeholder="Cuéntanos cómo es el objeto" required></textarea>
+      <textarea id="descripcion" name="Descripción" rows="4" placeholder="Cuéntanos cómo es el objeto" required></textarea>
 
       <button type="submit" class="boton boton-principal boton-enviar">Enviar</button>
     </form>
