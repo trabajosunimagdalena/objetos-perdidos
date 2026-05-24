@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Objetos Perdidos y Encontrados - Unimagdalena</title>
+<link rel="icon" type="image/png" href="https://www.unimagdalena.edu.co/Content/public/images/escudo.png">
+<link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+<header class="cabecera">
+  <div class="contenedor cabecera-interna">
+    <div class="logo">
+      <span class="logo-icono">🎓</span>
+      <span class="logo-texto">UNIMAGDALENA</span>
+    </div>
+    <nav class="menu">
+      <a href="#inicio">Inicio</a>
+      <a href="#muro">Reportar</a>
+      <a href="#ayuda">Ayuda</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="inicio">
+  <div class="contenedor">
+    <h1>¿Perdiste o encontraste algo en el campus?</h1>
+    <p class="hero-sub">Ayúdanos a que cada objeto regrese a su dueño.</p>
+    <div class="hero-botones">
+      <button class="boton boton-principal" onclick="abrirModal('perdido')">Reportar Objeto Perdido</button>
+      <button class="boton boton-secundario" onclick="abrirModal('encontrado')">Reportar Objeto Encontrado</button>
+    </div>
+  </div>
+</section>
+
+<section class="muro" id="muro">
+  <div class="contenedor">
+    <h2>Objetos reportados recientemente</h2>
+    <div class="grid-objetos">
+
+      <div class="tarjeta-objeto">
+        <div class="imagen-objeto">🧴</div>
+        <h3>Termo azul</h3>
+        <p class="lugar">Biblioteca Germán Bula Meyer</p>
+        <p class="descripcion">Termo metálico azul con calcomanías, encontrado en sala de estudio.</p>
+        <button class="boton boton-reclamar" onclick="reclamar('Termo azul')">Reclamar</button>
+      </div>
+
+      <div class="tarjeta-objeto">
+        <div class="imagen-objeto">📓</div>
+        <h3>Cuaderno cuadriculado</h3>
+        <p class="lugar">Bloque Mar Caribe</p>
+        <p class="descripcion">Cuaderno tapa dura con apuntes de cálculo, dejado en el salón 203.</p>
+        <button class="boton boton-reclamar" onclick="reclamar('Cuaderno cuadriculado')">Reclamar</button>
+      </div>
+
+      <div class="tarjeta-objeto">
+        <div class="imagen-objeto">🔑</div>
+        <h3>Llaves con llavero rojo</h3>
+        <p class="lugar">Cafetería central</p>
+        <p class="descripcion">Juego de tres llaves con llavero de tela rojo.</p>
+        <button class="boton boton-reclamar" onclick="reclamar('Llaves con llavero rojo')">Reclamar</button>
+      </div>
+
+      <div class="tarjeta-objeto">
+        <div class="imagen-objeto">🎧</div>
+        <h3>Audífonos negros</h3>
+        <p class="lugar">Bloque Ciénaga Grande</p>
+        <p class="descripcion">Audífonos inalámbricos en estuche negro, hallados cerca del laboratorio.</p>
+        <button class="boton boton-reclamar" onclick="reclamar('Audífonos negros')">Reclamar</button>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="ayuda" id="ayuda">
+  <div class="contenedor">
+    <h2>¿Cómo funciona?</h2>
+    <div class="pasos">
+      <div class="paso">
+        <span class="numero">1</span>
+        <p>Reporta el objeto que perdiste o encontraste en el campus.</p>
+      </div>
+      <div class="paso">
+        <span class="numero">2</span>
+        <p>Revisa el muro de objetos publicados por la comunidad.</p>
+      </div>
+      <div class="paso">
+        <span class="numero">3</span>
+        <p>Si reconoces algo tuyo, da clic en Reclamar y coordina la entrega.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="pie">
+  <div class="contenedor">
+    <p>Universidad del Magdalena - Proyecto académico de Diseño de Experiencia de Usuario</p>
+  </div>
+</footer>
+
+<div class="modal-fondo" id="modalFondo">
+  <div class="modal">
+    <button class="cerrar-modal" onclick="cerrarModal()">×</button>
+    <h2 id="tituloModal">Reportar objeto</h2>
+    <form id="formularioRegistro" onsubmit="enviarReporte(event)">
+      <label for="categoria">Categoría</label>
+      <select id="categoria" required>
+        <option value="">Selecciona una opción</option>
+        <option>Mochilas y bolsos</option>
+        <option>Electrónica</option>
+        <option>Documentos</option>
+        <option>Llaves</option>
+        <option>Ropa</option>
+        <option>Otro</option>
+      </select>
+
+      <label for="lugar">Lugar</label>
+      <input type="text" id="lugar" placeholder="Ej. Biblioteca, Bloque Mar Caribe" required>
+
+      <label for="descripcion">Descripción</label>
+      <textarea id="descripcion" rows="4" placeholder="Cuéntanos cómo es el objeto" required></textarea>
+
+      <button type="submit" class="boton boton-principal boton-enviar">Enviar</button>
+    </form>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
